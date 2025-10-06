@@ -18,19 +18,44 @@ export default function Dashboard() {
           Dashboard
         </h1>
 
-        <button
-          onClick={() => navigate("/profile")}
-          className="bg-blue-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
-        >
-          View Profile
-        </button>
+        {user?.isAdmin ? (
+          <>
+            <button
+              onClick={() => navigate("/admin/home")}
+              className="bg-blue-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
+            >
+              Admin Panel
+            </button>
+            <button
+              onClick={() => navigate("/admin/pending")}
+              className="bg-purple-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
+            >
+              Pending Tickets
+            </button>
+            <button
+              onClick={() => navigate("/admin/history")}
+              className="bg-indigo-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
+            >
+              Ticket History
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={() => navigate("/profile")}
+              className="bg-blue-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
+            >
+              View Profile
+            </button>
 
-        <button
-          onClick={() => navigate("/tickets")}
-          className="bg-green-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
-        >
-          View Tickets
-        </button>
+            <button
+              onClick={() => navigate("/tickets")}
+              className="bg-green-500 w-full py-4 rounded-xl mb-4 text-white text-lg font-semibold"
+            >
+              View Tickets
+            </button>
+          </>
+        )}
 
         <button
           onClick={handleLogout}
