@@ -1,11 +1,11 @@
-import React from 'react'
-import TicketCard from './TicketCard'
+import React from 'react';
+import TicketCard from './TicketCard';
 
 export default function AdminHistorique({ tickets }) {
-  const treated = tickets.filter(t => t.status !== 'pending' && t.status !== 'ouvert')
+  const treated = tickets.filter(t => t.status !== 'pending' && t.status !== 'ouvert');
   return (
     <section>
-      <h2 className="text-xl font-semibold text-[#3D5681] mb-3">Historique (accepted / refused)</h2>
+      <h2 className="text-xl font-semibold text-[#3D5681] mb-3">Historique (acceptés / refusés)</h2>
       {treated.length === 0 ? (
         <div className="text-gray-600 text-sm">Aucun ticket.</div>
       ) : (
@@ -22,7 +22,5 @@ export default function AdminHistorique({ tickets }) {
         </div>
       )}
     </section>
-  )
+  );
 }
-
-
