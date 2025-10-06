@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const authMiddleware = require("../middleware/auth.middleware");
-const adminMiddleware = require("../middleware/admin.midddleware");
+const adminMiddleware = require("../middleware/admin.middleware");
 const {
     createTicket,
     getAllTickets,
